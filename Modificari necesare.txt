@@ -1,0 +1,4 @@
+De la executam comanda sa fie una sub alta si sa fie produse noi. (Lista.)
+Idem la Retapitam:
+La despre noi: descriere firma de incredere.
+Sa fie mai responsive site-ul..... Ca sa nu fie cu overflow.
