@@ -357,7 +357,24 @@ header nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
+    position: relative;
 }
+
+.about-text-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('logo.png'); /* Path to your logo image */
+    background-size: contain; /* Adjust the size of the logo */
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.1; /* Adjust the transparency of the logo */
+    z-index: 1; /* Keep the logo behind the text */
+}
+
 
 
 .container-contact {
