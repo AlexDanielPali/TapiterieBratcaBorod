@@ -318,16 +318,13 @@ header nav ul li a:hover {
 }
 
 
-/* Existing styles for the container */
 .container-about {
     color: #191970;
     padding: 40px 20px;
     margin-top: 20px;
     border-radius: 10px;
-    position: relative; /* This allows us to place the logo behind the text */
 }
 
-/* Styling for the content section */
 .about-content {
     display: flex;
     gap: 20px;
@@ -335,7 +332,6 @@ header nav ul li a:hover {
     justify-content: center;
 }
 
-/* Logo box style */
 .logo-box {
     width: 100%;
     max-width: 300px;
@@ -353,40 +349,14 @@ header nav ul li a:hover {
     height: auto;
 }
 
-/* Text box style with logo as background */
 .about-text-box {
     width: 100%;
     max-width: 600px;
+    background-color: rgba(255, 228, 181, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     text-align: center;
-    position: relative; /* So the logo stays in the background */
-    z-index: 2; /* Ensures the text box is on top of the logo */
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: To make the text more readable over the background */
-}
-
-/* Set the logo as the background for the text box */
-.about-text-box::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('logo.png'); /* Path to your logo image */
-    background-size: contain; /* Adjust the size of the logo */
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 0.1; /* Adjust the transparency of the logo */
-    z-index: 1; /* Keep the logo behind the text */
-}
-
-/* Optional: styling for text to ensure visibility */
-.about-text {
-    font-family: 'Roboto', sans-serif;
-    color: #333;
-    line-height: 1.6;
 }
 
 
