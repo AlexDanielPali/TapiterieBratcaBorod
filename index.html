@@ -21,6 +21,8 @@
                 </div>
                 <nav class="navbar">
                     <ul>
+                        <li><a >Data: <span id="date"></span></a></li>
+                        <li><a >Ora: <span id="time"></span></a></li>
                         <li><a href="index.html">Acasă</a></li>
                         <li><a href="servicii.html">Servicii</a></li>
                         <li><a href="galerie.html">Galerie</a></li>
@@ -192,29 +194,6 @@
 
     <!-- Script Swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // Slider pentru galeria de imagini individuale
-        const swiper1 = new Swiper('.home-images-container', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            spaceBetween: 20,
-            slidesPerView: 3,
-        });
-
-        // Slider pentru secțiunea înainte-după
-        const swiper2 = new Swiper('.before-after-swiper', {
-            loop: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            spaceBetween: 20,
-            slidesPerView: 3,
-        });
-    </script>
     <script src=script.js></script>
 </body>
 </html>
