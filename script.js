@@ -54,3 +54,20 @@ document.addEventListener("DOMContentLoaded", function() {
     setInterval(updateDateTime, 60000); // Actualizare la fiecare minut
 });
 
+
+window.addEventListener('DOMContentLoaded', function() {
+    // Select all album grids
+    const albumGrids = document.querySelectorAll('.album-grid');
+    
+    albumGrids.forEach(function(grid) {
+        // Check the number of images in each grid
+        const images = grid.querySelectorAll('img');
+        
+        // If there's only one image, adjust the layout
+        if (images.length === 1) {
+            grid.classList.add('single-image'); // Add class for single image
+        } else {
+            grid.classList.remove('single-image'); // Remove class for multiple images
+        }
+    });
+});
