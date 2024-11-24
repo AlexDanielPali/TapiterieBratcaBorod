@@ -18,6 +18,9 @@ setInterval(updateDateTime, 1000);
 
 // Initial update on page load
 window.onload = updateDateTime;
+
+
+
  // Slider pentru galeria de imagini individuale
  const swiper1 = new Swiper('.home-images-container', {
     loop: true,
