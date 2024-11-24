@@ -318,7 +318,7 @@ header nav ul li a:hover {
 }
 
 
-.container-about {
+.container-about { 
     color: #191970;
     padding: 40px 20px;
     margin-top: 20px;
@@ -373,6 +373,18 @@ header nav ul li a:hover {
     background-position: center center;
     opacity: 0.1; /* Adjust the transparency of the logo */
     z-index: 1; /* Keep the logo behind the text */
+}
+
+/* Adjust text size */
+.about-text {
+    font-size: 14px;  /* Smaller text size */
+    line-height: 1.6; /* Adjust line height for better readability */
+}
+
+.about-text h3 {
+    font-size: 16px;  /* Adjust size of h3 elements */
+    margin-bottom: 10px;  /* Add space between paragraphs */
+    font-weight: bold;  /* Reduce font weight if needed */
 }
 
 
