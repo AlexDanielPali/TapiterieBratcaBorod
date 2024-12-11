@@ -178,6 +178,38 @@ header nav ul li a:hover {
 
 /* Eliminăm punctele de navigare (paginarea) */
 
+.recent-product-container {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 228, 181, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    color: #191970;
+}
+
+.recent-product-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #191970;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 
 .container-services {
     color: #ffe4b5;;
