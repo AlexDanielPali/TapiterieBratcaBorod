@@ -33,7 +33,17 @@ window.onload = updateDateTime;
 });
 
 // Slider pentru secțiunea înainte-după
-const swiper2 = new Swiper('.before-after-swiper', {
+const swiper2 = new Swiper('.recent-product-container', {
+    loop: true,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    spaceBetween: 20,
+    slidesPerView: 3,
+});
+
+const swiper3 = new Swiper('.before-after-swiper', {
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
