@@ -487,6 +487,8 @@ header nav ul li a:hover {
     max-width: 100%;
     overflow: hidden;
     position: relative;
+    width:100%;
+    aspect-ratio:16/9;
 }
 
 .map-container h2 {
@@ -498,7 +500,7 @@ header nav ul li a:hover {
 .map-iframe {
     width: 100%;
     max-width: 800px;
-    height: 400px;
+    height: 100%;
     border: none;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
