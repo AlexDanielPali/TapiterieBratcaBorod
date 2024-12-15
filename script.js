@@ -44,3 +44,12 @@ const swiper2 = new Swiper('.before-after-swiper', {
     spaceBetween: 20,
     slidesPerView: 3,
 });
+
+function myFunction() {
+    var x = document.getElementById("myNavMenu");
+    if (x.className === "navbar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navbar";
+    }
+  }

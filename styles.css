@@ -45,13 +45,13 @@ header .logo img {
     max-width: 150px;
 }
 
-header nav ul {
+header nav ul, .time {
     list-style: none;
     display: flex;
     gap: 20px;
 }
 
-header nav ul li a {
+header nav ul li a, .time{
     color: #191970;
     text-decoration: none;
     padding: 10px 15px;
@@ -65,6 +65,11 @@ header nav ul li a:hover {
     background-color: #191970;
     color: #ffe4b5;
 }
+
+header nav .icon {
+    display:none;
+}
+
 .container-home1, .container-home2, .container-about, .container-contact {
     color: #191970;
     margin-top: 20px;
@@ -561,6 +566,24 @@ header nav ul li a:hover {
         flex-direction: column;
         gap: 10px;
     }
+    .navbar a{
+        display:none;
+    }
+
+    .navbar a.icon {
+        float: center;
+        display: block;
+      }
+    .navbar.responsive a{
+        float:none;
+        display:block;
+        text-align:center;
+    }
+    .navbar.responsive a.icon{
+        position:center;
+        right:0;
+        top:0;
+    }
 
     /* Secțiuni de text și imagini */
     .home-text h1, .home-text h2 {
@@ -591,16 +614,21 @@ header nav ul li a:hover {
 
     .home-images-container .image-frame,
     .before-after-swiper .image-frame {
-        width: 100%;
-        height: auto;
-        max-width: 100vw;
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            
     }
 
     .home-images-container .image-frame img {
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
     }
 
 
@@ -625,6 +653,11 @@ header nav ul li a:hover {
         align-items: center;
     }
     
+    .navbar .icon{
+        float:right;
+        display:block;
+    }
+
     .navbar ul li {
         margin: 5px 0;
     }
