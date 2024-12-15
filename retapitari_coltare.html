@@ -49,17 +49,27 @@
 
         <div class="subcategory">
             <div class="album-grid">
-                <img src="Retapitari/Coltare/Comparatie.jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/inainte2.jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/dupa2.jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/Media (1).jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/Media (2).jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/Media (4).jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/Media (9).jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
-                <img src="Retapitari/Coltare/Media (10).jpg" alt="Retapițare Colțar 1" loading="lazy" data-date="2024-05-01">
+                <img src="Retapitari/Coltare/Comparatie.jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/inainte2.jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/dupa2.jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/Media (1).jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/Media (2).jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/Media (4).jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/Media (9).jpg" loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Coltare/Media (10).jpg" loading="lazy" onclick="expandImage(this);">
                 <!-- alte imagini pentru retapițări colțare -->
             </div>
         </div>
+        <div class="BigImage">
+            <!-- Close the image -->
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          
+            <!-- Expanded image -->
+            <img id="expandedImg" style="width:100%">
+          
+            <!-- Image text -->
+            <div id="imgtext"></div>
+          </div>
 
 
     </section>

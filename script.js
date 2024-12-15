@@ -45,11 +45,18 @@ const swiper2 = new Swiper('.before-after-swiper', {
     slidesPerView: 3,
 });
 
-function myFunction() {
+function ResponsiveNavBar() {
     var x = document.getElementById("myNavMenu");
     if (x.className === "navbar") {
       x.className += " responsive";
     } else {
       x.className = "navbar";
     }
+  }
+  function expandImage(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
   }

@@ -49,10 +49,20 @@
 
         <div class="subcategory">
             <div class="album-grid">
-                <img src="Retapitari/Auto/Media (7).jpg" alt="Retapițare Auto 1" loading="lazy" data-date="2024-04-15">
-                <img src="Retapitari/Auto/Media (6).jpg" alt="Retapițare Auto 1" loading="lazy" data-date="2024-04-15">
+                <img src="Retapitari/Auto/Media (7).jpg"  loading="lazy" onclick="expandImage(this);">
+                <img src="Retapitari/Auto/Media (6).jpg"  loading="lazy" onclick="expandImage(this);">
             </div>
         </div>
+        <div class="BigImage">
+            <!-- Close the image -->
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+          
+            <!-- Expanded image -->
+            <img id="expandedImg" style="width:100%">
+          
+            <!-- Image text -->
+            <div id="imgtext"></div>
+          </div>
     </section>
 
 
