@@ -1,0 +1,144 @@
+.container-about { 
+    color: var(--primary-color);
+    padding: var(--spacing-lg) var(--spacing-md);
+    margin-top: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.about-content {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+}
+
+.about-text-box {
+    width: 100%;
+    max-width: 800px;
+    background-color: var(--overlay-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: left;
+    position: relative;
+    transition: box-shadow var(--transition-speed) ease;
+    &:hover {
+        box-shadow: var(--box-shadow-hover);
+    }
+}
+
+.about-title {
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.about-description {
+    margin-bottom: var(--spacing-lg);
+
+    p {
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+.services-list {
+    h2 {
+        font-size: var(--font-size-lg);
+        color: var(--primary-color);
+        margin-bottom: var(--spacing-md);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin-bottom: var(--spacing-md);
+            transition: transform var(--transition-speed) ease;
+        }
+
+        h3 {
+            font-size: var(--font-size-md);
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        p {
+            font-size: var(--font-size-sm);
+            color: var(--primary-color);
+            margin-left: var(--spacing-sm);
+        }
+    }
+}
+
+/* Watermark logo */
+.about-text-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+/* Content stays above watermark */
+.about-text {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .about-text-box {
+        padding: var(--spacing-md);
+    }
+
+    .about-title {
+        font-size: var(--font-size-lg);
+    }
+
+    .about-description p,
+    .services-list p {
+        font-size: var(--font-size-sm);
+    }
+}
+
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        padding: var(--spacing-md);
+    }
+
+    .about-text-box {
+        max-width: 100%;
+        margin: var(--spacing-md) auto;
+    }
+
+    .services-list ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .about-text h2 {
+        font-size: var(--font-size-lg);
+    }
+
+    .services-list ul {
+        grid-template-columns: 1fr;
+    }
+
+    .about-text-box {
+        padding: var(--spacing-sm);
+    }
+}

@@ -1,0 +1,41 @@
+/* Base imports */
+@import 'base/variables.css';
+@import 'base/reset.css';
+
+/* Component imports */
+@import 'components/header.css';
+@import 'components/footer.css';
+@import 'components/about.css';
+@import 'components/contact.css';
+@import 'components/gallery.css';
+@import 'components/home.css';
+@import 'components/services.css';
+@import 'components/welcome-section.css';
+@import 'components/product-gallery.css';
+@import 'components/recent-product.css';
+@import 'components/before-after.css';
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(../assets/images/fundal1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--secondary-color);
+    line-height: 1.6;
+    width: 100%;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: var(--container-width);
+    margin: auto;
+    max-width: var(--max-width);
+}

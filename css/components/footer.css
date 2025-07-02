@@ -1,0 +1,124 @@
+footer {
+    position: relative;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: var(--spacing-md);
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: var(--content-width-lg);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Footer Content Grid */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    align-items: start;
+    justify-content: center;
+    padding: var(--spacing-md);
+}
+
+/* Contact Box */
+.footer-contact-box {
+    text-align: left;
+
+    p {
+        font-size: var(--font-size-md);
+        margin: var(--spacing-xs) 0;
+        font-weight: bold;
+    }
+}
+
+/* Social Media Box */
+.social-media-box {
+    .social-media-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+.social-button {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    transition: all var(--transition-speed) ease;
+    font-size: var(--font-size-md);
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        transform: translateX(var(--spacing-xs));
+    }
+}
+
+/* Map Box */
+.map-box {
+    iframe {
+        width: 100%;
+        height: 200px;
+        border: none;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-contact-box {
+        text-align: center;
+    }
+
+    .social-media-box .social-media-buttons {
+        align-items: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    .footer-contact-box,
+    .social-media-box,
+    .map-box {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-media-buttons {
+        align-items: center;
+    }
+
+    .footer-container {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .map-box iframe {
+        height: 250px;
+    }
+}
