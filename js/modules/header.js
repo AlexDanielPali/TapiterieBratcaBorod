@@ -3,6 +3,8 @@
  * @module header
  */
 
+import { initDateTime } from './datetime.js';
+
 /**
  * Manages the website header functionality
  */
@@ -223,8 +225,48 @@ function initSearch() {
     });
 }
 
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * Initializes dynamic navigation based on current page location
+ */
+function initDynamicNavigation() {
+    // Determine base path based on current location
+    const isInPagesDir = window.location.pathname.includes('/pages/');
+    const basePath = isInPagesDir ? '../' : '';
+    
+    // Navigation link configuration
+    const navLinks = {
+        'nav-home': basePath + (isInPagesDir ? '../' : '') + 'index.html',
+        'nav-servicii': basePath + 'pages/servicii.html',
+        'nav-galerie': basePath + 'pages/galerie.html',
+        'nav-desprenoi': basePath + 'pages/desprenoi.html',
+        'nav-contact': basePath + 'pages/contact.html'
+    };
+    
+    // Set correct links for navigation items
+    Object.keys(navLinks).forEach(className => {
+        const elements = document.querySelectorAll('.' + className);
+        elements.forEach(el => {
+            if (el && el.href) {
+                el.href = navLinks[className];
+            }
+        });
+    });
+}
+
+/**
+ * Initializes header functionality
+ * Should be called after header component is loaded
+ */
+export function initHeader() {
     new HeaderManager();
     initSearch();
+    initDateTime();
+    initDynamicNavigation();
+    
+    console.log('Header fully initialized with date/time and navigation');
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initHeader();
 });

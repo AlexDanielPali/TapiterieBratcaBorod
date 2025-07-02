@@ -1,78 +1,248 @@
 footer {
     position: relative;
     width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    padding: var(--spacing-md);
+    background-color: var(--secondary-color); /* Culoarea secundară, asemeni header-ului */
+    color: var(--primary-color); /* Albastru pentru text */
+    padding: var(--spacing-md) 0;
     text-align: center;
-    margin-top: auto;
+    margin-top: auto; /* Împinge footer-ul în jos */
+    z-index: 10;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Umbră subtilă în partea de sus */
+}
+
+/* Asigură că footer-ul este mereu vizibil și la baza paginii */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Înălțimea minimă a corpului este înălțimea viewport-ului */
+}
+
+main {
+    flex: 1 0 auto; /* Conținutul principal se extinde pentru a ocupa spațiul disponibil */
 }
 
 .footer-container {
     max-width: var(--content-width-lg);
     margin: 0 auto;
     overflow: hidden;
+    padding: 0 var(--spacing-md);
+    background-color: var(--secondary-color); /* Aceeași culoare ca header-ul */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
-/* Footer Content Grid */
+/* Footer Content Row Layout */
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: var(--spacing-md) 0;
     gap: var(--spacing-md);
-    align-items: start;
-    justify-content: center;
-    padding: var(--spacing-md);
+}
+
+/* Elementele din footer */
+.footer-contact-box, 
+.social-media-box, 
+.map-box {
+    flex: 1;
+    min-width: 250px;
+    padding: 0 var(--spacing-sm);
 }
 
 /* Contact Box */
 .footer-contact-box {
     text-align: left;
+}
 
-    p {
-        font-size: var(--font-size-md);
-        margin: var(--spacing-xs) 0;
-        font-weight: bold;
-    }
+.footer-contact-box h3,
+.social-media-box h3,
+.map-box h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--primary-color); /* Albastru pentru titluri */
+}
+
+.footer-contact-box h3 i,
+.social-media-box h3 i,
+.map-box h3 i {
+    color: var(--primary-color); /* Albastru pentru iconițe */
+}
+
+.footer-contact-box p {
+    font-size: var(--font-size-md);
+    margin: var(--spacing-xs) 0;
+    font-weight: 500;
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--primary-color); /* Albastru pentru text */
+}
+
+.footer-contact-box p i {
+    width: 20px;
+    color: var(--primary-color);
+}
+
+.footer-contact-box a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+}
+
+.footer-contact-box a:hover {
+    color: var(--secondary-color); /* Culoarea fundalului la hover */
+    background-color: var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-decoration: underline;
 }
 
 /* Social Media Box */
-.social-media-box {
-    .social-media-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
+.social-media-box .social-media-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
-.social-button {
+.contact-social-button {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    justify-content: center;
     text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: var(--spacing-sm);
-    border-radius: var(--border-radius);
-    background-color: var(--secondary-color);
+    color: var(--primary-color); /* Albastru pentru butoane */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(25, 25, 112, 0.1); /* Fundal albastru transparent */
     transition: all var(--transition-speed) ease;
     font-size: var(--font-size-md);
+}
 
-    &:hover {
-        background-color: var(--primary-color);
-        color: var(--secondary-color);
-        transform: translateX(var(--spacing-xs));
-    }
+.contact-social-button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-social-button i {
+    font-size: 1.2em;
+}
+
+/* Personalizare butoane rețele sociale */
+.facebook:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.instagram:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.tiktok:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.whatsapp:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 /* Map Box */
 .map-box {
-    iframe {
-        width: 100%;
-        height: 200px;
-        border: none;
-        border-radius: var(--border-radius);
-        box-shadow: var(--box-shadow);
-    }
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.map-box iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+    transition: opacity 0.3s ease;
+    opacity: 0.9; /* Ușor transparent inițial */
+    border-radius: var(--border-radius);
+}
+
+.map-box iframe:hover {
+    opacity: 1; /* Devine complet opac la hover */
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    position: relative;
+    padding: var(--spacing-sm) 0;
+    border-top: 1px solid rgba(25, 25, 112, 0.2); /* Linie separatoare albastra transparentă */
+    margin-top: var(--spacing-sm);
+    text-align: center;
+    font-size: 0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+}
+
+.scroll-to-top {
+    position: absolute;
+    right: var(--spacing-md);
+    bottom: var(--spacing-md);
+}
+
+.scroll-to-top a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    transition: all var(--transition-speed) ease;
+}
+
+.scroll-to-top a:hover {
+    background-color: var(--primary-color); /* Păstrează culoarea fundalului */
+    color: var(--secondary-color); /* Culoarea textului este culoarea fundalului */
+    transform: translateY(-5px);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer-contact-box {
+    animation-delay: 0.1s;
+}
+
+.social-media-box {
+    animation-delay: 0.3s;
+}
+
+.map-box {
+    animation-delay: 0.5s;
+}
+
+.footer-nav {
+    animation-delay: 0.7s;
 }
 
 /* Responsive Design */
@@ -86,32 +256,66 @@ footer {
         text-align: center;
     }
 
+    .footer-contact-box p {
+        justify-content: center;
+    }
+
     .social-media-box .social-media-buttons {
         align-items: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .scroll-to-top {
+        position: static;
+        margin-top: var(--spacing-sm);
     }
 }
 
 @media (max-width: 992px) {
     .footer-content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-lg);
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-contact-box, 
+    .social-media-box, 
+    .map-box {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .footer-contact-box {
+        text-align: center;
     }
 
-    .footer-contact-box,
-    .social-media-box,
-    .map-box {
-        max-width: 100%;
+    .footer-contact-box p {
+        justify-content: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .scroll-to-top {
+        position: static;
+        margin-top: var(--spacing-sm);
     }
 }
 
 @media (max-width: 576px) {
     .footer-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         text-align: center;
     }
 
     .social-media-buttons {
-        align-items: center;
+        justify-content: center;
     }
 
     .footer-container {
@@ -119,6 +323,6 @@ footer {
     }
 
     .map-box iframe {
-        height: 250px;
+        height: 200px;
     }
 }

@@ -4,6 +4,7 @@
  */
 
 import { loadComponent } from '../loadComponents.js';
+import { initHeader } from './header.js';
 
 /**
  * Manages the About page functionality
@@ -39,6 +40,9 @@ class AboutManager {
                 loadComponent('header', '../components/layout/header.html'),
                 loadComponent('footer', '../components/layout/footer.html')
             ]);
+            
+            // Initialize header with date/time functionality
+            initHeader();
             
             // Setup functionality
             this.setupAnimations();

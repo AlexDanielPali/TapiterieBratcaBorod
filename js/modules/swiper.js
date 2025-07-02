@@ -18,11 +18,8 @@ export const initSwiper = () => {
     const swiperInstances = {};
     
     try {
-        // Slider pentru galeria de imagini individuale (PRODUSE NOI)
-        initProductsSwiper();
-        
-        // Slider pentru secțiunea înainte-după (RETAPIȚĂRI)
-        initBeforeAfterSwiper();
+        // Inițializăm toate sliderele
+        initAllSwipers();
         
         console.log('Toate sliderele au fost inițializate cu succes');
         return swiperInstances;
@@ -32,77 +29,103 @@ export const initSwiper = () => {
     }
     
     /**
-     * Initialize products swiper
+     * Inițializează toate sliderele din pagină
      */
-    function initProductsSwiper() {
-        const productsContainer = document.querySelector('.home-images-container');
+    function initAllSwipers() {
+        // Găsim toate containerele Swiper
+        const swiperContainers = document.querySelectorAll('.swiper-container');
         
-        if (!productsContainer) {
-            console.warn('Container pentru slider produse negăsit');
+        if (!swiperContainers.length) {
+            console.warn('Nu au fost găsite containere pentru slidere');
             return;
         }
         
-        const nextBtn = productsContainer.querySelector('.swiper-button-next');
-        const prevBtn = productsContainer.querySelector('.swiper-button-prev');
-        
-        // Add accessibility attributes
-        if (nextBtn) {
-            nextBtn.setAttribute('aria-label', 'Următoarea imagine');
-            nextBtn.setAttribute('tabindex', '0');
-        }
-        
-        if (prevBtn) {
-            prevBtn.setAttribute('aria-label', 'Imaginea anterioară');
-            prevBtn.setAttribute('tabindex', '0');
-        }
-        
-        swiperInstances.products = new Swiper(productsContainer, {
-            loop: true,
-            navigation: {
-                nextEl: nextBtn,
-                prevEl: prevBtn,
-            },
-            spaceBetween: 20,
-            slidesPerView: 1,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-            },
-            lazy: {
-                loadPrevNext: true,
-                loadOnTransitionStart: true,
-            },
-            a11y: {
-                enabled: true,
-                prevSlideMessage: 'Imaginea anterioară',
-                nextSlideMessage: 'Următoarea imagine',
-                firstSlideMessage: 'Prima imagine',
-                lastSlideMessage: 'Ultima imagine',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                768: {
-                    slidesPerView: 3,
-                }
+        // Inițializăm fiecare container Swiper
+        swiperContainers.forEach((container, index) => {
+            // Verificăm tipul de container pentru a aplica setări specifice
+            const isProductSlider = container.closest('#home2') !== null;
+            const isRetapitariSlider = container.closest('#home3') !== null;
+            const isBeforeAfterSlider = container.classList.contains('before-after-container');
+            
+            const nextBtn = container.querySelector('.swiper-button-next');
+            const prevBtn = container.querySelector('.swiper-button-prev');
+            
+            // Adăugăm atribute de accesibilitate
+            if (nextBtn) {
+                nextBtn.setAttribute('aria-label', 'Următoarea imagine');
+                nextBtn.setAttribute('tabindex', '0');
             }
+            
+            if (prevBtn) {
+                prevBtn.setAttribute('aria-label', 'Imaginea anterioară');
+                prevBtn.setAttribute('tabindex', '0');
+            }
+            
+            // Configurație comună pentru toate sliderele
+            const commonConfig = {
+                loop: true,
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn,
+                },
+                spaceBetween: 20,
+                slidesPerView: 1,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                lazy: {
+                    loadPrevNext: true,
+                    loadOnTransitionStart: true,
+                },
+                a11y: {
+                    enabled: true,
+                    prevSlideMessage: 'Imaginea anterioară',
+                    nextSlideMessage: 'Următoarea imagine',
+                    firstSlideMessage: 'Prima imagine',
+                    lastSlideMessage: 'Ultima imagine',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    768: {
+                        slidesPerView: 3,
+                    }
+                }
+            };
+            
+            // Setări specifice pentru slider-ul de înainte/după
+            if (isRetapitariSlider || isBeforeAfterSlider) {
+                commonConfig.a11y.prevSlideMessage = 'Comparația anterioară';
+                commonConfig.a11y.nextSlideMessage = 'Următoarea comparație';
+                commonConfig.autoplay.delay = 5000;
+            }
+            
+            // Inițializăm Swiper cu configurația
+            swiperInstances[`swiper${index}`] = new Swiper(container, commonConfig);
+            
+            console.log(`Swiper inițializat: ${isProductSlider ? 'Produse' : isRetapitariSlider ? 'Retapițări' : 'Alt tip'}`);
         });
+        
+        // De asemenea, inițializăm și sliderele legacy, dacă există
+        initLegacyBeforeAfterSwipers();
     }
     
     /**
-     * Initialize before-after swiper
+     * Inițializează sliderele înainte/după care folosesc clasa veche (.before-after-swiper)
+     * pentru compatibilitate cu codul existent
      */
-    function initBeforeAfterSwiper() {
+    function initLegacyBeforeAfterSwipers() {
         const beforeAfterContainers = document.querySelectorAll('.before-after-swiper');
         
         if (!beforeAfterContainers.length) {
-            console.warn('Containere pentru slider înainte-după negăsite');
+            console.warn('Containere pentru slider înainte-după cu clasa veche negăsite');
             return;
         }
         
@@ -121,7 +144,7 @@ export const initSwiper = () => {
                 prevBtn.setAttribute('tabindex', '0');
             }
             
-            swiperInstances[`beforeAfter${index}`] = new Swiper(container, {
+            swiperInstances[`beforeAfterLegacy${index}`] = new Swiper(container, {
                 loop: true,
                 navigation: {
                     nextEl: nextBtn,
@@ -156,6 +179,8 @@ export const initSwiper = () => {
                     }
                 }
             });
+            
+            console.log('Swiper legacy înainte/după inițializat');
         });
     }
 };

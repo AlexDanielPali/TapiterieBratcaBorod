@@ -3,7 +3,7 @@
  * Handles component loading and module initialization for the home page
  */
 import { loadComponent } from '../loadComponents.js';
-import { initDateTime } from './datetime.js';
+import { initHeader } from './header.js';
 import { initSwiper } from './swiper.js';
 import './utils.js'; // Import utility functions
 
@@ -51,8 +51,8 @@ async function initIndex() {
         
         console.log('Toate componentele au fost încărcate cu succes');
 
-        // Initialize date and time functionality
-        initDateTime();
+        // Initialize header with date and time functionality
+        initHeader();
 
         // Initialize Swiper sliders after components are loaded
         setTimeout(() => {

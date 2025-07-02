@@ -6,8 +6,7 @@
 
 import { loadComponent, clearComponentCache } from './loadComponents.js';
 import { initSwiper } from './modules/swiper.js';
-import { initDateTime } from './modules/datetime.js';
-import { initHamburgerMenu } from './modules/hamburger.js';
+import { initHeader } from './modules/header.js';
 import './modules/utils.js';
 
 // Only import debug in development mode
@@ -70,8 +69,8 @@ async function initApp() {
         // Initialize core modules
         console.log('Inițializare module de bază...');
         
-        // Initialize date and time display
-        const cleanupDateTime = initDateTime();
+        // Initialize header with date and time display
+        initHeader();
         
         // Initialize sliders after a short delay
         setTimeout(() => {
@@ -95,7 +94,6 @@ async function initApp() {
         // Add cleanup function for when page is unloaded
         window.addEventListener('beforeunload', () => {
             // Clean up any resources or event listeners
-            if (cleanupDateTime) cleanupDateTime();
             
             // Clear component cache on page unload if in development mode
             if (isDevelopment) clearComponentCache();

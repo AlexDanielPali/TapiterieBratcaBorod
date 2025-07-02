@@ -50,68 +50,55 @@ export function initDateTime() {
      * @param {string} str - The string to capitalize
      * @returns {string} The capitalized string
      */
-    function capitalizeWords(str) {
+    const capitalizeWords = (str) => {
         return str.replace(/\b\w/g, char => char.toUpperCase());
-    }
+    };
 
     /**
-     * Updates the date and time display
+     * Updates the date display
      */
-    function updateDateTime() {
-        const now = new Date();
-        
-        // Format date with Romanian locale
-        const date = now.toLocaleDateString(LOCALE, DATE_OPTIONS);
-        
-        // Capitalize first letter of each word in date
-        const formattedDate = capitalizeWords(date);
-        
-        // Format time with Romanian locale
-        const time = now.toLocaleTimeString(LOCALE, TIME_OPTIONS);
-
-        // Update elements if they exist
+    const updateDate = () => {
         if (dateElement) {
+            const now = new Date();
+            let formattedDate = new Intl.DateTimeFormat(LOCALE, DATE_OPTIONS).format(now);
+            formattedDate = capitalizeWords(formattedDate);
             dateElement.textContent = formattedDate;
-            // Add title for screen readers
-            dateElement.setAttribute('title', `Data curentă: ${formattedDate}`);
         }
-        
+    };
+
+    /**
+     * Updates the time display
+     */
+    const updateTime = () => {
         if (timeElement) {
-            timeElement.textContent = time;
-            timeElement.setAttribute('title', `Ora curentă: ${time}`);
+            const now = new Date();
+            const formattedTime = new Intl.DateTimeFormat(LOCALE, TIME_OPTIONS).format(now);
+            timeElement.textContent = formattedTime;
         }
-    }
+    };
 
     // Initial update
-    updateDateTime();
+    updateDate();
+    updateTime();
 
-    // Update every second
-    const intervalId = setInterval(updateDateTime, 1000);
+    // Update date once per day at midnight
+    const startOfTomorrow = new Date();
+    startOfTomorrow.setHours(24, 0, 0, 0);
+    const timeToMidnight = startOfTomorrow - new Date();
 
-    /**
-     * Format a date for display
-     * @param {Date|string} date - The date to format
-     * @param {boolean} [includeTime=false] - Whether to include the time
-     * @returns {string} The formatted date string
-     */
-    function formatDate(date, includeTime = false) {
-        const dateObj = date instanceof Date ? date : new Date(date);
-        let options = { ...DATE_OPTIONS };
-        
-        if (includeTime) {
-            options = { ...options, ...TIME_OPTIONS };
-        }
-        
-        return capitalizeWords(dateObj.toLocaleDateString(LOCALE, options));
-    }
+    // Set timeout for date update at midnight
+    const dateTimeout = setTimeout(function updateDateDaily() {
+        updateDate();
+        // Setup next update for tomorrow
+        setTimeout(updateDateDaily, 24 * 60 * 60 * 1000);
+    }, timeToMidnight);
 
-    // Expose the formatDate function globally
-    window.formatDate = formatDate;
+    // Update time every second
+    const timeInterval = setInterval(updateTime, 1000);
 
-    // Return cleanup function to clear interval if needed
-    return function cleanup() {
-        clearInterval(intervalId);
-        // Remove global function when cleaning up
-        delete window.formatDate;
+    // Return cleanup function
+    return () => {
+        clearTimeout(dateTimeout);
+        clearInterval(timeInterval);
     };
 }

@@ -4,92 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tapiterie B&B</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <meta name="description" content="Tapiterie B&B - Servicii profesionale de tapițerie și retapițări mobilier în Bihor. Executăm paturi, canapele și colțare noi la comandă.">
+    <title>Tapiterie B&B | Servicii de tapițerie și mobilier nou</title>
+    <!-- Fonts and external resources -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
     <!-- Header -->
-        <div id="header" class="component-loading">Se încarcă...</div>
+    <div id="header" class="component-loading">Se încarcă...</div>
 
-
-    <!-- Home Section -->
-    <section id="home1" class="container-home1">
-        <div class="home-text-box">
-            <div class="home-text">
-                <h1>Bine ați venit la Tapiterie B&B</h1>
-                <h1>Tapiterie de calitate, la comandă.</h1>
-                <h1>Executăm la comandă:</h1>
-                <ul>
-                    <h2>PRODUSE NOI:</h2>
-                    <ul>
-                        <h3>Paturi</h3>
-                        <h3>Canapele</h3>
-                        <h3>Colțare</h3>
-                    </ul>
-                    <h2>RETAPIȚĂRI:</h2>
-                    <ul>
-                        <h3>Canapele</h3>
-                        <h3>Scaune</h3>
-                        <h3>Colțare</h3>
-                        <h3>Auto</h3>
-                    </ul>
-                    <h2>SERVICII DE TRANSPORT</h2>
-                </ul>
-                <a href="servicii.html" class="cta">Vezi Serviciile</a>
-            </div>
-        </div>
-    </section> 
-    
-    <!-- Galerie de imagini individuale -->
-    <section id="home2" class="container-home2">
-        <div class="home-images-container swiper-container">
-            <h1 class="home-images-title">PRODUSE NOI </h1>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine1.jpg" alt="Pat tapițat - Imagine 1" loading="lazy">
+    <!-- Conținut principal -->
+    <main>
+        <!-- Secțiune de bun venit -->
+        <section id="home1" class="container-home1">
+            <div class="home-text-box">
+                <div class="home-text">
+                    <h1>Bine ați venit la Tapiterie B&B</h1>
+                    <h1>Tapiterie de calitate, la comandă.</h1>
+                    <h1>Executăm la comandă:</h1>
+                    
+                    <div class="services-list">
+                        <h2>PRODUSE NOI:</h2>
+                        <ul>
+                            <li><h3>Paturi</h3></li>
+                            <li><h3>Canapele</h3></li>
+                            <li><h3>Colțare</h3></li>
+                        </ul>
+                        
+                        <h2>RETAPIȚĂRI:</h2>
+                        <ul>
+                            <li><h3>Canapele</h3></li>
+                            <li><h3>Scaune</h3></li>
+                            <li><h3>Colțare</h3></li>
+                            <li><h3>Auto</h3></li>
+                        </ul>
+                        
+                        <h2>SERVICII DE TRANSPORT</h2>
                     </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine2.jpg" alt="Pat tapițat - Imagine 2" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine3.jpg" alt="Colțar modern - Imagine 3" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine4.jpg" alt="Produs personalizat - Imagine 4" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine5.jpg" alt="Colțar elegant - Imagine 5" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine6.jpg" alt="Pat de lux - Imagine 6" loading="lazy">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Produse noi/imagine7.jpg" alt="Pat confortabil - Imagine 7" loading="lazy">
-                    </div>
+                    
+                    <a href="servicii.html" class="cta">Vezi Serviciile</a>
                 </div>
             </div>
-            <!-- Săgețile de navigare -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div> 
-
+        </section> 
+        
+        <!-- Galerie produse noi -->
         <section id="home2" class="container-home2">
+            <div class="home-images-container swiper-container">
+                <h1 class="home-images-title">PRODUSE NOI</h1>
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine1.jpg" alt="Pat tapițat - Imagine 1" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine2.jpg" alt="Pat tapițat - Imagine 2" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine3.jpg" alt="Colțar modern - Imagine 3" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine4.jpg" alt="Produs personalizat - Imagine 4" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine5.jpg" alt="Colțar elegant - Imagine 5" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 6 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine6.jpg" alt="Pat de lux - Imagine 6" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 7 -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Produse noi/imagine7.jpg" alt="Pat confortabil - Imagine 7" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigare swiper -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div> 
+        </section>
+
+        <!-- Cel mai recent produs -->
+        <section id="recent-product" class="container-recent-product">
             <div class="recent-product-container">
                 <h1 class="home-images-title">CEL MAI RECENT PRODUS</h1>
                 <div class="video-wrapper">
@@ -98,74 +123,117 @@
                         Browser-ul tău nu suportă tag-ul video.
                     </video>
                 </div>
-                    </div>
-                </div>
-                <!-- Săgețile de navigare -->
-               
             </div>
         </section>
-        
-        <section id="home2" class="container-home2">
-         <div class="home-images-container swiper-container">
-            <h1 class="home-images-title">RETAPIȚĂRI</h1>
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/inainte.jpg" alt="Scaun înainte de retapițare" loading="lazy">
-                        <p class="before-after-label">Înainte</p>
+
+        <!-- Secțiune Retapițări -->
+        <section id="home3" class="container-home3">
+            <div class="home-images-container swiper-container">
+                <h1 class="home-images-title">RETAPIȚĂRI</h1>
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 - Înainte -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/inainte.jpg" alt="Canapea înainte de retapițare" loading="lazy">
+                            <p class="before-after-label">Înainte</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 - După -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/dupa.jpg" alt="Canapea după retapițare" loading="lazy">
+                            <p class="before-after-label">După</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 - Înainte -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/inainte1.jpg" alt="Scaun înainte de retapițare" loading="lazy">
+                            <p class="before-after-label">Înainte</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 - După -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/dupa1.jpg" alt="Scaun după retapițare" loading="lazy">
+                            <p class="before-after-label">După</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 - Înainte -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/inainte2.jpg" alt="Colțar înainte de retapițare" loading="lazy">
+                            <p class="before-after-label">Înainte</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 6 - După -->
+                    <div class="swiper-slide">
+                        <div class="image-frame">
+                            <img src="assets/images/Retapitari/dupa2.jpg" alt="Colțar după retapițare" loading="lazy">
+                            <p class="before-after-label">După</p>
+                        </div>
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/dupa.jpg" alt="Scaun după retapițare" loading="lazy">
-                        <p class="before-after-label">După</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/inainte1.jpg" alt="Canapea înainte de retapițare" loading="lazy">
-                        <p class="before-after-label">Înainte</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/dupa1.jpg" alt="Canapea după retapițare" loading="lazy">
-                        <p class="before-after-label">După</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/inainte2.jpg" alt="Colțar înainte de retapițare" loading="lazy">
-                        <p class="before-after-label">Înainte</p>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="image-frame">
-                        <img src="assets/images/Retapitari/dupa2.jpg" alt="Colțar după retapițare" loading="lazy">
-                        <p class="before-after-label">După</p>
-                    </div>
-                </div>
+                
+                <!-- Navigare swiper -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-            <!-- Săgețile de navigare -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-
-    </section>
-
-    <!-- Galerie Înainte-După -->
-<section id="before-after" class="container-before-after">
-    
-    <div class="before-after-swiper swiper-container">
-       
-</section>
-
+        </section>
+    </main>
 
     <!-- Footer -->
-    <div id="footer"></div>
+    <div id="footer" class="component-loading">Se încarcă...</div>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="js/app.js"></script>
+    <script>
+        // Script pentru animarea elementelor la scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Adaugăm clasa fade-in-on-scroll și observăm elementele relevante
+            const sections = document.querySelectorAll('section, .footer-content > div');
+            sections.forEach(section => {
+                section.classList.add('fade-in-on-scroll');
+                observer.observe(section);
+            });
+            
+            // Funcție pentru butonul de scroll to top
+            document.addEventListener('componentLoaded', function(e) {
+                if (e.detail.id === 'footer') {
+                    const scrollToTopButton = document.querySelector('.scroll-to-top a');
+                    if (scrollToTopButton) {
+                        scrollToTopButton.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth'
+                            });
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>

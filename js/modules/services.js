@@ -4,6 +4,8 @@
  */
 
 import { loadComponent } from '../loadComponents.js';
+import { initDateTime } from './datetime.js';
+import { initHeader } from './header.js';
 
 /**
  * Helper function to resolve paths based on current page location
@@ -105,6 +107,9 @@ class ServicesManager {
                     )
                 );
             }
+            
+            // Initialize header with date/time functionality
+            initHeader();
             
             // Load service components
             for (const component of standardComponents) {

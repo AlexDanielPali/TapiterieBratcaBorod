@@ -9,16 +9,40 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo img {
     max-width: 150px;
 }
 
+/* Stiluri pentru dată și oră */
+.navbar ul li a span#date,
+.navbar ul li a span#time {
+    font-weight: bold;
+    display: inline-block;
+    background-color: rgba(25, 25, 112, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    transition: all var(--transition-speed) ease;
+}
+
+.navbar ul li a span#time {
+    font-family: monospace;
+}
+
+.navbar ul li a:hover span#date,
+.navbar ul li a:hover span#time {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
 .navbar ul {
     list-style: none;
     display: flex;
     gap: var(--spacing-md);
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navbar ul li a {
@@ -29,11 +53,14 @@ header {
     font-size: var(--font-size-md);
     border-radius: var(--border-radius);
     transition: all var(--transition-speed) ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .navbar ul li a:hover {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Culoarea fundalului header-ului */
 }
 
 /* Hamburger Menu Styles */
@@ -84,6 +111,12 @@ header {
     .navbar ul {
         flex-wrap: wrap;
         justify-content: center;
+    }
+    
+    /* Date & time elements stacked on smaller screens */
+    .navbar ul li:nth-child(1),
+    .navbar ul li:nth-child(2) {
+        margin-bottom: 10px;
     }
 }
 

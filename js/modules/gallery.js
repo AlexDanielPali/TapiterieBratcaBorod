@@ -5,6 +5,7 @@
 
 import { loadComponent } from '../loadComponents.js';
 import { galleryConfig } from '../config/galleryConfig.js';
+import { initHeader } from './header.js';
 
 /**
  * Manages gallery functionality and image loading
@@ -50,6 +51,9 @@ class GalleryManager {
                 loadComponent('header', '../components/layout/header.html'),
                 loadComponent('footer', '../components/layout/footer.html')
             ]);
+            
+            // Initialize header with date/time functionality
+            initHeader();
 
             // Update page title if needed
             this.updatePageTitle();
