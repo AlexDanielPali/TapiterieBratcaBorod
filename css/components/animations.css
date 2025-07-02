@@ -1,0 +1,324 @@
+/**
+ * Animation styles for Tapiterie B&B website
+ */
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Fade-in from right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in from left */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade-in from bottom */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in from top */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.loading-spinner div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: loading-spinner 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.loading-spinner div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.loading-spinner div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.loading-spinner div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes loading-spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Page transition animations */
+.page-loaded .header {
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.page-loaded .footer {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.page-loaded .home-text-box {
+    animation: fadeIn 1s ease-out;
+}
+
+.page-loaded .gallery-image-wrapper {
+    animation: fadeInUp 0.5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+/* Staggered animations for gallery items */
+.page-loaded .gallery-image-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.page-loaded .gallery-image-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.page-loaded .gallery-image-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.page-loaded .gallery-image-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.page-loaded .gallery-image-wrapper:nth-child(5) { animation-delay: 0.5s; }
+.page-loaded .gallery-image-wrapper:nth-child(6) { animation-delay: 0.6s; }
+.page-loaded .gallery-image-wrapper:nth-child(7) { animation-delay: 0.7s; }
+.page-loaded .gallery-image-wrapper:nth-child(8) { animation-delay: 0.8s; }
+.page-loaded .gallery-image-wrapper:nth-child(9) { animation-delay: 0.9s; }
+.page-loaded .gallery-image-wrapper:nth-child(10) { animation-delay: 1s; }
+
+/* Image hover animations */
+.gallery-image-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-image {
+    transition: transform 0.5s ease;
+}
+
+.gallery-image-container:hover .gallery-image {
+    transform: scale(1.05);
+}
+
+/* Button hover effects */
+.cta, .btn, button:not([disabled]) {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.cta:hover, .btn:hover, button:not([disabled]):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta:active, .btn:active, button:not([disabled]):active {
+    transform: translateY(0);
+}
+
+/* Service cards animations */
+.service-category-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Animate service component */
+.animate-service {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+/* Lightbox animations */
+.gallery-lightbox {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-image {
+    transition: transform 0.3s ease;
+}
+
+.lightbox-container:hover .lightbox-image {
+    transform: scale(1.02);
+}
+
+/* Navigation menu animations */
+.navbar ul li {
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li:hover {
+    transform: translateY(-2px);
+}
+
+/* Contact form animations */
+.contact-form input, 
+.contact-form textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+/* Loading and transition states */
+.app-loading {
+    cursor: progress;
+}
+
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Error animations */
+.error-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Debug mode styles */
+.debug-mode {
+    position: relative;
+}
+
+.debug-overlay {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 9999;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow: auto;
+    font-family: monospace;
+    font-size: 12px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.debug-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.debug-controls button {
+    background: #444;
+    border: none;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.debug-controls button:hover {
+    background: #666;
+}
+
+.debug-output {
+    max-height: 300px;
+    overflow: auto;
+    background: #222;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.debug-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+}

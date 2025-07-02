@@ -14,6 +14,7 @@
 @import 'components/product-gallery.css';
 @import 'components/recent-product.css';
 @import 'components/before-after.css';
+@import 'components/animations.css';
 
 /* Base styles */
 body {
