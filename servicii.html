@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tapiterie B&B</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <section class="top-bar">
+                <div class="logo">
+                    <img src="logo.png" alt="Tapiterie B&B Logo">
+                </div>
+                <div class="time">
+                    <ul>
+                        <li><a>Data: <span id="date"></span></a></li>
+                        <li><a>Ora: <span id="time"></span></a></li>
+                    </ul>
+                </div>
+                <nav class="navbar">
+                <div class="navmenu", id="myNavMenu">
+                    <ul>
+                        <li><a href="index.html">Acasă</a></li>
+                        <li><a href="servicii.html">Servicii</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="desprenoi.html">Despre noi</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="ResponsiveNavBar()">
+                    <i class="fa fa-bars"></i>
+                  </a>
+                </nav>
+            </section>
+        </div>    
+    </header>
+
+<!-- Secțiunea Servicii -->
+<section id="services" class="container-services">
+    <div class="services-content">
+        <h1 class="service-title">Servicii</h1>
+        <h2 class="services-title"> PRODUSE NOI </h2>
+        <div class="service-box">
+            <img src="Produse noi/Paturi/imagine1.jpg" alt="Paturi Tapițate" class="service-image">
+            <div class="service-content">
+                <h2>Paturi Tapițate</h2>
+                <p>Oferim o gamă variată de paturi tapițate, incluzând modele tip chesterfield, cu romburi, linii sau simple, toate personalizate conform preferințelor clientului.</p>
+            </div>
+        </div>
+
+        <!-- Serviciu 2: Colțare -->
+        <div class="service-box">
+            <img src="Produse noi/Coltare/imagine3.jpg" alt="Colțare" class="service-image">
+            <div class="service-content">
+                <h2>Colțare</h2>
+                <p>Colțare fixe, extensibile și extensibile cu ladă, proiectate pentru confort și spațiu optim, ideale pentru orice tip de încăpere.</p>
+            </div>
+        </div>
+
+        <!-- Serviciu 3: Canapele -->
+        <div class="service-box">
+            <img src="Produse noi/Canapele/Media (18).jpg" alt="Canapele" class="service-image">
+            <div class="service-content">
+                <h2>Canapele</h2>
+                <p>Canapele fixe și extensibile, fabricate la standarde înalte de calitate, asigurând durabilitate și un aspect elegant pentru locuința dumneavoastră.</p>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="container-services">
+        <div class="services-content">
+            <h2 class="services-title">RETAPIȚĂRI</h2>
+            
+            <!-- Serviciu 1: Retapițări Canapele -->
+            <div class="service-box">
+                <img src="Retapitari/Canapele/inainte1.jpg" alt="Retapițări Canapele" class="service-image">
+                <img src="Retapitari/Canapele/dupa1.jpg" alt="Retapițări Canapele" class="service-image">
+                <div class="service-content">
+                    <h2>Retapițări Canapele</h2>
+                    <p>Oferim servicii de retapițare pentru toate tipurile de canapele, redându-le aspectul nou și confortul dorit.</p>
+                </div>
+            </div>
+    
+            <!-- Serviciu 2: Retapițări Scaune -->
+            <div class="service-box">
+                <img src="Retapitari/Scaune/inainte.jpg" alt="Retapițări Canapele" class="service-image">
+                <img src="Retapitari/Scaune/dupa.jpg" alt="Retapițări Canapele" class="service-image">
+                <div class="service-content">
+                    <h2>Retapițări Scaune</h2>
+                    <p>Recondiționăm scaune de toate tipurile, oferindu-le un nou aspect și prelungindu-le durata de viață.</p>
+                </div>
+            </div>
+    
+            <!-- Serviciu 3: Retapițări Colțare -->
+            <div class="service-box">
+                <img src="Retapitari/Coltare/inainte2.jpg" alt="Retapițări Canapele" class="service-image">
+                <img src="Retapitari/Coltare/dupa2.jpg" alt="Retapițări Canapele" class="service-image">
+                <div class="service-content">
+                    <h2>Retapițări Colțare</h2>
+                    <p>Reînnoim colțarele dvs., fie că sunt fixe sau extensibile, pentru a le oferi un aspect fresh și modern.</p>
+                </div>
+            </div>
+    
+            <!-- Serviciu 4: Retapițări Auto -->
+            <div class="service-box">
+                <img src="Retapitari/Auto/Media (6).jpg" alt="Retapițări Canapele" class="service-image">
+                <img src="Retapitari/Auto/Media (7).jpg" alt="Retapițări Canapele" class="service-image">
+                <div class="service-content">
+                    <h2>Retapițări Auto</h2>
+                    <p>Transformăm interiorul mașinii dvs. prin retapițarea scaunelor auto, redându-le eleganța și confortul inițial.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-contact-box">
+                    <p>&copy; 2024 Tapiterie B&B. Toate drepturile rezervate.</p>
+                    <p>Adresă: Beznea, nr. 89, jud. Bihor</p>
+                    <p>Telefon: 0744919194</p>
+                    <p>Email: tapiteriebb@gmail.com</p>
+                </div>
+                <div class="social-media-box">
+                    <div class="social-media-buttons">
+                        <a href="https://www.facebook.com/profile.php?id=100091462526962" target="_blank" class="contact-social-button facebook">
+                            <i class="fab fa-facebook-f"></i> Tapițerie Bratca Borod
+                        </a>
+                        <a href="https://www.instagram.com/tapiteriebb?igsh=NXhyZHJqam10N3Jo" target="_blank" class="contact-social-button instagram">
+                            <i class="fab fa-instagram"></i> tapiteriebb
+                        </a>
+                        <a href="https://www.tiktok.com/@tapierie.bratca.b?_t=8qoNlYQMPW2&_r=1" target="_blank" class="contact-social-button tiktok">
+                            <i class="fab fa-tiktok"></i> tapierie.bratca.b
+                        </a>
+                    </div>
+                </div>
+                <div id="currentDateTime"></div>
+                <!-- Adăugare hartă -->
+                <div class="map-box">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2722.7600571671255!2d22.61243727641333!3d46.966404171138336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47488519bde6a8c7%3A0xc63d37ffcf1e76a4!2sTapiterie%20Bratca%20Borod!5e0!3m2!1sro!2sro!4v1733992168180!5m2!1sro!2sro" 
+                        width="100%" 
+                        height="200" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<script src=script.js></script>
+</body>
+</html>
