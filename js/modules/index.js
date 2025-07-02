@@ -1,4 +1,7 @@
 import { loadComponent } from '../loadComponents.js';
+import { initDateTime } from './datetime.js';
+import { initSwiper } from './swiper.js';
+import './utils.js'; // Import utility functions
 
 const indexComponents = [
     { id: 'header', path: 'components/layout/header.html' },
@@ -12,26 +15,22 @@ const indexComponents = [
 async function initIndex() {
     try {
         console.log('Initializing index page...');
+        
+        // Load all components
         for (const component of indexComponents) {
             console.log(`Loading component: ${component.id}`);
             await loadComponent(component.id, component.path);
         }
         console.log('All components loaded successfully');
 
-        // Initialize Swiper after components are loaded
-        if (typeof Swiper !== 'undefined') {
-            new Swiper('.swiper-container', {
-                loop: true,
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-        }
+        // Initialize date and time functionality
+        initDateTime();
+
+        // Initialize Swiper sliders after components are loaded
+        setTimeout(() => {
+            initSwiper();
+        }, 100);
+
     } catch (error) {
         console.error('Error initializing index:', error);
     }

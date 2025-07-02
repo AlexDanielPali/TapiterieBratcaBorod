@@ -1,4 +1,16 @@
 
+// =====================================================
+// ACEST FIȘIER NU MAI ESTE UTILIZAT ACTIV
+// =====================================================
+// Funcționalitatea a fost mutată în sistemul modular ES6:
+// - js/modules/datetime.js - pentru funcționalitatea de dată și oră
+// - js/modules/swiper.js - pentru slider-urile Swiper
+// - js/modules/utils.js - pentru funcții utilitare
+// - js/modules/index.js - pentru inițializarea paginii principale
+// =====================================================
+
+// ACEST COD ESTE PĂSTRAT PENTRU REFERINȚĂ
+/*
 // Function to update the time and date
 function updateDateTime() {
     var currentDate = new Date(); // Get the current date and time
@@ -19,10 +31,8 @@ setInterval(updateDateTime, 1000);
 // Initial update on page load
 window.onload = updateDateTime;
 
-
-
- // Slider pentru galeria de imagini individuale
- const swiper1 = new Swiper('.home-images-container', {
+// Slider pentru galeria de imagini individuale
+const swiper1 = new Swiper('.home-images-container', {
     loop: true,
     navigation: {
         nextEl: '.swiper-button-next',
@@ -33,8 +43,6 @@ window.onload = updateDateTime;
 });
 
 // Slider pentru secțiunea înainte-după
-
-
 const swiper2 = new Swiper('.before-after-swiper', {
     loop: true,
     navigation: {
@@ -53,10 +61,12 @@ function ResponsiveNavBar() {
       x.className = "navbar";
     }
   }
-  function expandImage(imgs) {
+  
+function expandImage(imgs) {
     var expandImg = document.getElementById("expandedImg");
     var imgText = document.getElementById("imgtext");
     expandImg.src = imgs.src;
     imgText.innerHTML = imgs.alt;
     expandImg.parentElement.style.display = "block";
-  }
+}
+*/
