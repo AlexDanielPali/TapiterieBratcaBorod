@@ -1,3 +1,5 @@
+@import '../components/social-media.css';
+
 footer {
     position: relative;
     width: 100%;
@@ -104,66 +106,18 @@ main {
     text-decoration: underline;
 }
 
-/* Social Media Box */
-.social-media-box .social-media-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
-}
 
-.contact-social-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: var(--primary-color); /* Albastru pentru butoane */
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(25, 25, 112, 0.1); /* Fundal albastru transparent */
-    transition: all var(--transition-speed) ease;
-    font-size: var(--font-size-md);
-}
 
-.contact-social-button:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-.contact-social-button i {
-    font-size: 1.2em;
-}
 
 /* Personalizare butoane rețele sociale */
-.facebook:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
 
-.instagram:hover {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.tiktok:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.whatsapp:hover {
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-}
 
 /* Map Box */
 .map-box {
     overflow: hidden;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    
 }
 
 .map-box iframe {
@@ -185,144 +139,84 @@ main {
     padding: var(--spacing-sm) 0;
     border-top: 1px solid rgba(25, 25, 112, 0.2); /* Linie separatoare albastra transparentă */
     margin-top: var(--spacing-sm);
-    text-align: center;
     font-size: 0.9em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--primary-color);
 }
 
-.scroll-to-top {
-    position: absolute;
-    right: var(--spacing-md);
-    bottom: var(--spacing-md);
-}
-
-.scroll-to-top a {
+/* New layout when using a UL inside footer-bottom */
+.footer-bottom ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    box-shadow: var(--box-shadow);
-    transition: all var(--transition-speed) ease;
+    gap: var(--spacing-md);
+    width: 100%;
+    max-width: var(--content-width-lg);
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
 }
 
-.scroll-to-top a:hover {
-    background-color: var(--primary-color); /* Păstrează culoarea fundalului */
-    color: var(--secondary-color); /* Culoarea textului este culoarea fundalului */
-    transform: translateY(-5px);
+.footer-bottom ul li {
+    display: inline-flex;
+    align-items: center;
 }
 
-/* Animations */
-.fade-in {
-    animation: fadeIn 0.5s ease-in forwards;
-    opacity: 0;
+.footer-bottom ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+/* position first item to the left, last to the right, center stays centered */
+.footer-bottom ul li:first-child {
+    margin-right: auto;
+}
+.footer-bottom ul li:last-child {
+    margin-left: auto;
 }
 
-.footer-contact-box {
-    animation-delay: 0.1s;
+/* Fallback: if footer-bottom contains a single <p> keep it centered */
+.footer-bottom > p {
+    text-align: center;
+    margin: 0 auto;
 }
 
-.social-media-box {
-    animation-delay: 0.3s;
-}
-
-.map-box {
-    animation-delay: 0.5s;
-}
-
-.footer-nav {
-    animation-delay: 0.7s;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .footer-contact-box {
-        text-align: center;
-    }
+  .footer-contact-box,
+  .social-media-box,
+  .map-box {
+    min-width: 100%;
+    padding: var(--spacing-sm) 0;
+  }
 
-    .footer-contact-box p {
-        justify-content: center;
-    }
+  .footer-contact-box h3,
+  .social-media-box h3,
+  .map-box h3 {
+    justify-content: center;
+  }
 
-    .social-media-box .social-media-buttons {
-        align-items: center;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .scroll-to-top {
-        position: static;
-        margin-top: var(--spacing-sm);
-    }
-}
+  .footer-contact-box p {
+    justify-content: center;
+  }
 
-@media (max-width: 992px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-contact-box, 
-    .social-media-box, 
-    .map-box {
-        width: 100%;
-        max-width: 500px;
-        margin-bottom: var(--spacing-md);
-    }
-    
-    .footer-contact-box {
-        text-align: center;
-    }
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
 
-    .footer-contact-box p {
-        justify-content: center;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-    }
-    
-    .scroll-to-top {
-        position: static;
-        margin-top: var(--spacing-sm);
-    }
-}
-
-@media (max-width: 576px) {
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .social-media-buttons {
-        justify-content: center;
-    }
-
-    .footer-container {
-        padding: var(--spacing-md) var(--spacing-sm);
-    }
-
-    .map-box iframe {
-        height: 200px;
-    }
+  .footer-bottom ul li:first-child,
+  .footer-bottom ul li:last-child {
+    margin: 0;
+  }
 }

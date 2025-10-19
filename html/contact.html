@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 <header>
@@ -21,7 +21,6 @@
                 <img src="../../assets/images/logo.png" alt="Tapiterie B&B Logo">
             </div>
             
-            <!-- Add hamburger button -->
             <button class="hamburger" id="hamburger-menu" aria-label="Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -40,91 +39,69 @@
         </section>
     </div>
 </header>
-<section id="home1" class="container-home1">
-  <div class="home-text-box">
-    <div class="home-text">
-      <h1 class="welcome-title">Bine ați venit la Tapiterie B&B</h1>
-      <h2 class="welcome-subtitle">Tapiterie de calitate, la comandă.</h2>
+<main>
+<section class="contact-hero">
+        <h1><i class="fas fa-envelope-open-text"></i> Contact Tapiterie B&B</h1>
+        <h2><i class="fas fa-address-card"></i> Pentru întrebări sau comenzi, ne puteți contacta folosind detaliile de mai jos.</h2>
+        <div class="contact-details-list">
+            <div><i class="fas fa-map-marker-alt"></i> <a href="https://www.google.com/maps/place/Beznea,+nr.+89,+jud.+Bihor" target="_blank" rel="noopener noreferrer">Beznea, nr. 89, jud. Bihor</a></div>
+            <div><i class="fas fa-phone"></i> <a href="tel:0744919194">0744 919 194</a></div>
+            <div><i class="fas fa-envelope"></i> <a href="mailto:tapiteriebb@gmail.com">tapiteriebb@gmail.com</a></div>
+        </div>
+        <div class="contact-actions">
+            <a href="tel:0744919194" class="contact-action-btn"><i class="fas fa-phone"></i> Sună acum</a>
+            <a href="mailto:tapiteriebb@gmail.com" class="contact-action-btn"><i class="fas fa-envelope"></i> Trimite email</a>
+        </div>
+        
+        <section class="social-media-section">
+        <h2><i class="fas fa-share-alt"></i> Urmărește-ne pe rețelele sociale</h2>
+        <div class="social-media-buttons">
+            <a href="https://www.facebook.com/profile.php?id=100091462526962" 
+               target="_blank" 
+               class="contact-social-button facebook"
+               rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="https://www.instagram.com/tapiteriebb?igsh=NXhyZHJqam10N3Jo" 
+               target="_blank" 
+               class="contact-social-button instagram"
+               rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.tiktok.com/@tapierie.bratca.b?_t=8qoNlYQMPW2&_r=1" 
+               target="_blank" 
+               class="contact-social-button tiktok"
+               rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://wa.me/40744919194" 
+               target="_blank" 
+               class="contact-social-button whatsapp"
+               rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+        </section>
+    </section>
 
-      <div class="cards-grid" aria-label="Serviciile noastre principale">
+    <section class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2722.7600571671255!2d22.61243727641333!3d46.966404171138336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47488519bde6a8c7%3A0xc63d37ffcf1e76a4!2sTapiterie%20Bratca%20Borod!5e0!3m2!1sro!2sro!4v1733992168180!5m2!1sro!2sro" 
+            width="100%" 
+            height="300" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            title="Locația Tapiterie B&B pe Google Maps"
+            aria-label="Hartă cu locația Tapiterie B&B">
+        </iframe>
+    </section>
 
-        <!-- Produse noi: blended card with media carousel + features -->
-        <article class="service-card card" data-images="assets/images/Produse noi/Paturi/imagine1.jpg|assets/images/Produse noi/Paturi/imagine2.jpg|assets/images/Produse noi/Canapele/Media (18).jpg|assets/images/Produse noi/Alte Produse/Media (24).jpg" aria-labelledby="produseno-title">
-          <div class="card-media" aria-hidden="false">
-            <img class="card-image" src="assets/images/Produse noi/Paturi/imagine1.jpg" alt="Produse noi">
-            <div class="card-controls">
-              <button class="prev" aria-label="Imagine anterioară">&#8249;</button>
-              <button class="next" aria-label="Următoarea imagine">&#8250;</button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="service-head">
-              <span class="icon" aria-hidden="true"><i class="fas fa-couch"></i></span>
-              <h3 id="produseno-title">Produse noi</h3>
-            </div>
-            <p>Fabricăm paturi, canapele și colțare personalizate — materiale de calitate, finisaje la comandă. Explorează exemplele noastre și alege ideea care ți se potrivește.</p>
-            <ul class="service-features" aria-hidden="false">
-              <li>Paturi</li><li>Canapele</li><li>Colțare</li>
-            </ul>
-            <div class="thumbs" aria-hidden="false"></div>
-            <div class="card-actions">
-              <a class="btn-primary" href="./html/gallery.html">Vezi galerie</a>
-              <a class="btn-primary" href="./html/services.html">Detalii produse</a>
-            </div>
-          </div>
-        </article>
+    
+        
+    
+</main>
 
-        <!-- Cel mai recent produs: video-first card with links -->
-        <article class="service-card card" aria-labelledby="recent-title">
-          <div class="card-media">
-            <video class="card-video" controls poster="assets/videos/MicrosoftTeams-video.png">
-              <source src="assets/videos/MicrosoftTeams-video.mp4" type="video/mp4">
-              Browser-ul tău nu suportă tag-ul video.
-            </video>
-          </div>
-          <div class="card-body">
-            <div class="service-head">
-              <span class="icon" aria-hidden="true"><i class="fas fa-film"></i></span>
-              <h3 id="recent-title">Cel mai recent produs</h3>
-            </div>
-            <p>Urmărește procesul nostru prin clipuri și imagini — vezi un exemplu recent pentru a evalua calitatea și atenția la detalii.</p>
-          </div>
-        </article>
-
-        <!-- Retapițări: before/after carousel + features -->
-        <article class="service-card card" data-images="assets/images/Retapitari/Scaune/inainte.jpg|assets/images/Retapitari/Scaune/dupa.jpg|assets/images/Retapitari/Coltare/inainte2.jpg|assets/images/Retapitari/Coltare/dupa2.jpg" aria-labelledby="retapitari-title">
-          <div class="card-media">
-            <img class="card-image" src="assets/images/Retapitari/Scaune/inainte.jpg" alt="Retapițări">
-            <div class="card-controls">
-              <button class="prev" aria-label="Imagine anterioară">&#8249;</button>
-              <button class="next" aria-label="Următoarea imagine">&#8250;</button>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="service-head">
-              <span class="icon" aria-hidden="true"><i class="fas fa-tools"></i></span>
-              <h3 id="retapitari-title">Retapițări</h3>
-            </div>
-            <p>Recondiționăm canapele, scaune și colțare — schimbăm stofa, reparăm structuri și readucem mobilierul la viață cu rezultate înainte/după vizibile.</p>
-            <ul class="service-features" aria-hidden="false">
-              <li>Canapele</li><li>Scaune</li><li>Auto</li>
-            </ul>
-            <div class="thumbs" aria-hidden="false"></div>
-            <div class="card-actions">
-              <a class="btn-primary" href="./html/services.html">Servicii retapițări</a>
-              <a class="btn-primary" href="./html/gallery.html">Galerie înainte/după</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-
-      <div style="margin-top: var(--spacing-md); text-align:center;">
-        <a href="./html/services.html" class="cta">Vezi Serviciile</a>
-      </div>
-    </div>
-  </div>
-</section>
 <footer>
     <div class="footer-container">
         <div class="footer-content">
@@ -176,9 +153,7 @@
         </div>
     </div>
 </footer>
-<script src="./js/hamburger.js"></script>
-<script src="./js/dateTime.js"></script>
-<script src="./js/homeCard.js"></script>
-
+<script src="../js/hamburger.js"></script>
+<script src="../js/dateTime.js"></script>
 </body>
 </html>
