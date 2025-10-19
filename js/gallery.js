@@ -23,12 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentImages = [];
     let currentIndex = 0;
 
-    function openLightbox(images, index){
-        currentImages = images; currentIndex = index||0;
-        lbImg.src = currentImages[currentIndex];
-        lb.classList.add('active'); lb.setAttribute('aria-hidden','false');
-    }
-    function closeLightbox(){ lb.classList.remove('active'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+    function openLightbox(images, index = 0) {
+    currentImages = images;
+    currentIndex = index;
+    lbImg.src = currentImages[currentIndex];
+    lb.classList.add('active');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // lock scroll
+    lbClose.focus(); // set focus
+}
+
+function closeLightbox() {
+    lb.classList.remove('active');
+    lb.setAttribute('aria-hidden', 'true');
+    lbImg.src = '';
+    document.body.style.overflow = ''; // restore scroll
+}
     function showNext(n){ currentIndex = (currentIndex + n + currentImages.length) % currentImages.length; lbImg.src = currentImages[currentIndex]; }
 
     // Open when clicking a card: choose images inside (.before-after img) or single img
