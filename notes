@@ -1,0 +1,17 @@
+
+         
+        
+         <article class="gallery-card" data-cats="scaune-retapitari">
+            <div class="gallery-media before-after">
+                <img loading="lazy" src="assets/images/Retapitari/Scaune/Media (20).jpg" alt="Scaun înainte">
+                <img loading="lazy" src="assets/images/Retapitari/Scaune/Media (19).jpg" alt="Scaun după">
+            </div>
+            <div class="gallery-body"><h4> </h4><div class="gallery-meta"></div></div>
+        </article>
+        <article class="gallery-card" data-cats="scaune-retapitari">
+            <div class="gallery-media before-after">
+                <img loading="lazy" src="assets/images/Retapitari/Scaune/Media (22).jpg" alt="Scaun înainte">
+                <img loading="lazy" src="assets/images/Retapitari/Scaune/Media (21).jpg" alt="Scaun după">
+            </div>
+            <div class="gallery-body"><h4> </h4><div class="gallery-meta"></div></div>
+        </article>

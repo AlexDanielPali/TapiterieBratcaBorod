@@ -221,43 +221,42 @@ body.menu-open {
 
 @import 'components/social-media.css';
 
-footer {
-    position: relative;
-    width: 100%;
-    background-color: var(--secondary-color); /* Culoarea secundară, asemeni header-ului */
-    color: var(--primary-color); /* Albastru pentru text */
-    padding: var(--spacing-md) 0;
-    text-align: center;
-    margin-top: auto; /* Împinge footer-ul în jos */
-    z-index: 10;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Umbră subtilă în partea de sus */
-}
-
-/* Asigură că footer-ul este mereu vizibil și la baza paginii */
+/* Ensure footer sticks to bottom */
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Înălțimea minimă a corpului este înălțimea viewport-ului */
+    min-height: 100vh;
+    margin: 0; /* Remove default body margin */
 }
 
 main {
-    flex: 1 0 auto; /* Conținutul principal se extinde pentru a ocupa spațiul disponibil */
+    flex: 1; /* Take up remaining space */
 }
 
+/* Footer */
+footer {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    margin-top: auto; /* Pushes footer down */
+    z-index: 10;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer container */
 .footer-container {
     max-width: var(--content-width-lg);
     margin: 0 auto;
-    overflow: hidden;
-    padding: 0 var(--spacing-md);
-    background-color: var(--secondary-color); /* Aceeași culoare ca header-ul */
+    background-color: var(--secondary-color);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
 }
 
-/* Footer Content Row Layout */
+/* Footer content layout */
 .footer-content {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
@@ -356,12 +355,11 @@ main {
 
 /* Footer bottom bar */
 .footer-bottom {
-    position: relative;
     padding: var(--spacing-sm) 0;
-    border-top: 1px solid rgba(25, 25, 112, 0.2); /* Linie separatoare albastra transparentă */
-    margin-top: var(--spacing-sm);
+    border-top: 1px solid rgba(25, 25, 112, 0.2);
     font-size: 0.9em;
     color: var(--primary-color);
+     /* Remove extra margin */
 }
 
 /* New layout when using a UL inside footer-bottom */
@@ -814,11 +812,11 @@ gallery-hero {
       font-size: var(--font-size-xl); 
       margin:0; 
     }
-    .filter-chips { 
-      display:flex; 
-      gap:8px; 
-      flex-wrap:wrap; 
-    }
+    .filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
     .chip { 
       padding:6px 10px; 
       border-radius:999px; 
@@ -1008,6 +1006,28 @@ gallery-hero {
   .lb-close {
     top: 6px;
     right: 6px;
+  }
+}
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .filter-chips {
+    display: none;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .filter-chips.open {
+    display: flex;
   }
 }
 .container-home1 { padding: var(--spacing-lg) 0; }
