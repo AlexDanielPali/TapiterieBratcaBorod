@@ -15,3 +15,5 @@
             </div>
             <div class="gallery-body"><h4> </h4><div class="gallery-meta"></div></div>
         </article>
+
+        <div class="gallery-body"><h4></h4><div class="gallery-meta"></div></div>
